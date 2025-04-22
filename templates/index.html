@@ -1,0 +1,43 @@
+<!-- flask servers are more senstive with html files, make sure all the attributes are correct or you will recieve constant errors! -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- fill this part -->
+    <title> buddies.com </title> <!-- change the name idk -->
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
+    <meta name="viewport" content="width=device-width, initial-scal=1.0"/> <!-- mainly coded for computers, fuck phone websites -->
+    <!-- to change the style find style sheets in the folder -->
+
+
+</head>
+
+
+<body>
+<!-- fill this part also -->
+    <h1> Buddies.com </h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title" required />
+        <input type="file" name="image" accept="image/*" required />
+        <textarea name="description" placeholder="//Type something"> </textarea>
+
+        <button type="submit"> Post </button>
+    </form>
+    <!-- forum container, use the ids to style them in style.css -->
+
+    <div class="postyPostContainer" id="postContainer">
+        {% for post in posts %}
+        <div class="post">
+            <h2> {{post.title}}</h2>
+            <img src="{{ post.image_url }}" alt="{{ post.title }}"/>
+            <p> {{ post.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
+
