@@ -1,7 +1,9 @@
-A simple code for the website working on. Uses flask and you need python for
-this code, use the pyinstaller for that, or you can install the requirements
-list in vnev. 
+## working in progress ## 
+everything should be here in the folders, its pretty simple
+-css file is in static
+-index is in template !it can be sensative, the html file interacts with the flask server
+-post are stored in jason and images in static/upload
 
-good luck, its simple to use. 
-AbuildingOnFire
+other than that its really simple, if use the link to open in your browser to interact with the server
+
 

@@ -1,5 +1,4 @@
 #app.py // yes this is called main but its the app
-
 #kinda built this using linux so idk how windows will handle this, i can recommend using windows visual studios just install flask and werkzeug.utils
 
 from flask import Flask, render_template, request, redirect, url_for
@@ -25,6 +24,22 @@ def load_post():
 def save_posts(posts):
     with open(POSTS_FILE, 'w') as f:
         json.dump(posts, f)
+
+# // read file // starter file 
+def read_file(file_path):
+    try:
+        file = open(file_path, 'r')
+        content = file.read()
+        print(content)
+    except FileNotFoundError:
+        print(f"Error: file not found at {file_path}")
+    finally:
+        # // file closes ... 
+        if 'file' in locals():
+            file.close()
+
+read_file('readme.txt')
+
 
 # // main route
 @app.route('/', methods=['GET', 'POST'])

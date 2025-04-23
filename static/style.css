@@ -1,15 +1,22 @@
 /* yes the code exist 8? */
 
+/* this is the main css code, im really bad at this and its a mess but everything should be here.*/
+
+
 .post_input{
     border: solid black 1px;
-    padding: 1px;
+    padding: 10px;
+    border-radius: 10px; 
 }
+.description_input{
+    position: relative;
+    margin-top: 10px; 
 
-.postyPostContainer{
+
+}
+.postyPostContainer {
     position: absolute;
     height: 100px;
-
-
 }
 
 .posty_des{
@@ -21,13 +28,19 @@
     margin-top: 10px;
     border:  solid black 1px;
     padding: 0px 10px;
+    width: 99%;
 
 }
+.title_input{
+    position: absolute;
+    margin-bottom: 10px;
 
-.src_image{
+
+
+}
+.src_image {
     /*post image, the name was obvious*/
     max-width: 400px;
-
 }
 
 p#texty{
