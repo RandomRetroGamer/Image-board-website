@@ -1,8 +1,38 @@
 /* yes the code exist 8? */
 
+.post_input{
+    border: solid black 1px;
+    padding: 1px;
+}
+
 .postyPostContainer{
     position: absolute;
     height: 100px;
 
 
+}
+
+.posty_des{
+
+}
+
+.post{
+    /* this is for the entire post container*/
+    margin-top: 10px;
+    border:  solid black 1px;
+    padding: 0px 10px;
+
+}
+
+.src_image{
+    /*post image, the name was obvious*/
+    max-width: 400px;
+
+}
+
+p#texty{
+
+    height: 100px;
+    overflow-x: auto;
+    overflow-y: auto;
 }

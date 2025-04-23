@@ -18,24 +18,30 @@
 <body>
 <!-- fill this part also -->
     <h1> Buddies.com </h1>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="text" name="title" placeholder="Title" required />
-        <input type="file" name="image" accept="image/*" required />
-        <textarea name="description" placeholder="//Type something"> </textarea>
 
-        <button type="submit"> Post </button>
-    </form>
+    <div class="post_input">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Title" required />
+            <input type="file" name="image" accept="image/*" required />
+            <textarea name="description" placeholder="//Type something"> </textarea>
+
+            <button type="submit"> Post </button>
+        </form>
+    </div>
     <!-- forum container, use the ids to style them in style.css -->
 
     <div class="postyPostContainer" id="postContainer">
         {% for post in posts %}
         <div class="post">
-            <h2> {{post.title}}</h2>
-            <img src="{{ post.image_url }}" alt="{{ post.title }}"/>
-            <p> {{ post.description }}</p>
+            <h2 class="title"> {{post.title}}</h2>
+            <img src="{{ post.image }}" alt="{{ post.title }}" class="src_image"/>
+            <p class="posty_des"> {{ post.description }}</p>
         </div>
         {% endfor %}
     </div>
+    <!-- this part is for the forum post that interacts with the py file, would not recommmend to mess with unless you are experinced with these interactions -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 
