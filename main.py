@@ -40,9 +40,19 @@ def read_file(file_path):
 
 read_file('readme.txt')
 
+#// check json file
+def fix_json():
+    posts = load_post()
+    for post in posts:
+        if "comments" not in post:
+            post["comments"] = []
+
+        save_posts(posts)
+        print("fix posts")
+
 
 # // main route
-@app.route('/', methods=['GET', 'POST', 'COMMENT'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     posts = load_post()  # <-- returns loaded from disk
 
@@ -59,7 +69,8 @@ def index():
             post = {
                 'title': title,
                 'description': description,
-                'image': path
+                'image': path,
+                'comments': []
             }
 
             posts.insert(0, post)  # <-- insert the actual post, not the list itself
@@ -69,6 +80,25 @@ def index():
         return redirect(url_for('index'))  # // for the newest post // it resets
 
     return render_template('index.html', posts=posts)
+
+
+@app.route('/comment/<int:post_id>', methods=['POST'])
+def comment(post_id):
+    posts = load_post()
+    comment_text = request.form["comment"]
+
+    if 0 <= post_id < len(posts):
+        if "comments" not in posts[post_id]:
+            posts[post_id]["comments"] = []
+
+
+        posts[post_id]["comments"].append(comment_text)
+
+        save_posts(posts)
+
+    return redirect(url_for('index'))
+
+
 
 if __name__ == "__main__":
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
