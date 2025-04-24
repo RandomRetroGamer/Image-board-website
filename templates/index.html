@@ -18,11 +18,14 @@
 <body>
 <!-- fill this part also -->
     <h1> Buddies.com </h1>
+    <div class="website" id="websites">
+        <h1> this is a website </h1>
+    </div>
 
     <div class="post_input">
         <form method="POST" enctype="multipart/form-data">
             <input type="text" name="title" placeholder="Title" class="title_input" required />
-            <input type="file" name="image" accept="image/*" required />
+            <input type="file" name="image" accept="image/*" class="image_button" required />
             <textarea name="description" placeholder="//Type something" class="description_input"> </textarea>
 
             <button type="submit"> Post </button>
@@ -33,7 +36,15 @@
     <div class="postyPostContainer" id="postContainer">
         {% for post in posts %}
         <div class="post">
-            <h2 class="title"> {{post.title}}</h2>
+        <div class="post-header">
+            <button type="submit" class="plus" id="plus_id"> + </button>
+
+            <em class="user"> random_buddy </em>
+
+            <em class="title"> {{post.title}} </em>
+
+        </div>
+
             <img src="{{ post.image }}" alt="{{ post.title }}" class="src_image"/>
             <p class="posty_des"> {{ post.description }}</p>
         </div>
