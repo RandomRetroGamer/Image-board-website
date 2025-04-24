@@ -42,7 +42,7 @@ read_file('readme.txt')
 
 
 # // main route
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST', 'COMMENT'])
 def index():
     posts = load_post()  # <-- returns loaded from disk
 
@@ -64,6 +64,7 @@ def index():
 
             posts.insert(0, post)  # <-- insert the actual post, not the list itself
             save_posts(posts)
+
 
         return redirect(url_for('index'))  # // for the newest post // it resets
 
