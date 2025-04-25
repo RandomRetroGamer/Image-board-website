@@ -16,7 +16,7 @@
 
 
 <body>
-<!-- fill this part also -->
+    <!-- fill this part also -->
     <h1> Buddies.com </h1>
     <div class="website" id="websites">
     </div>
@@ -41,32 +41,37 @@
 
                 <em class="user"> random_buddy:  </em>
 
-                <em class="title"> {{post.title}} </em>
+                <em class="title"> {{ post.title }} </em>
 
             </div>
+            <br />
 
             <img src="{{ post.image }}" alt="{{ post.title }}" class="src_image" />
             <p class="posty_des"> {{ post.description }}</p>
 
+            <button type="submit" id="commant_button" class="comments_button_class" onclick="toggleComments(this)"> comments: </button>
 
-            <div class="comments">
-                <p> comments: </p>
+            <div class="comments-section" style="display: none;">
+                <form method="post" action="{{ url_for('comment', post_id=loop.index0) }}">
+                    <textarea name="comment" placeholder="add a comment" required></textarea>
+                    <button type="submit"> Comment </button>
 
+                </form>
                 {% for comment in post.comments %}
-
-                <p>- {{ comment }} </p>
+                <p class="comment_container"> ->> {{ comment }} </p>
                 {% endfor %}
+
+
+
+
             </div>
 
-            <form method="post" action="{{ url_for('comment', post_id=loop.index0) }}">
-                <textarea name="comment" placeholder="add a comment"></textarea>
-                <button type="submit"> Comment </button>
-            </form>
 
-            {% endfor %}
+
         </div>
-
+        {% endfor %}
     </div>
+
     <!-- this part is for the forum post that interacts with the py file, would not recommmend to mess with unless you are experinced with these interactions -->
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>

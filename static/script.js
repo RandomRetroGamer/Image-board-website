@@ -38,3 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
         container.prepend(post); // Adds new post at the top
     }
 });
+
+function toggleComments(button) {
+    const post = button.closest('.post');
+    const commentsSection = post.querySelector('.comments-section');
+
+    if (commentsSection.style.display === 'none' || commentsSection.style.display === '') {
+        commentsSection.style.display = 'block';
+    } else {
+        commentsSection.style.display = 'none';
+    }
+}

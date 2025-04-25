@@ -46,7 +46,6 @@
     overflow-y: auto;
     padding: 10px;
     height: auto;
-    border: solid 1px black;
 
     white-space: normal;    /* Allows text to wrap */
     word-wrap: break-word;  /* Breaks long words if needed */
@@ -87,11 +86,16 @@ p#texty{
 .user{
     color: green;
 }
-.comments{
+.comments {
     padding: 10px;
+    border: solid 1px black;
+    overflow-y: auto;
+    height: 500px;
+    white-space: normal; /* Allows text to wrap */
+    word-wrap: break-word; /* Breaks long words if needed */
+    word-break: break-word; /* Helps with long words or URLs */
 
-
-
+    color: green; 
 }
 textarea{
     height: 50px;
@@ -100,3 +104,8 @@ textarea{
 
 
 }
+
+.comments_button_class{
+    margin-bottom: 10px; 
+}
+
