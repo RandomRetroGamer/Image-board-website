@@ -39,6 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+function toggleThreadForm() {
+    const commentsSection = document.querySelector('.create_thread_container');
+    if (!commentsSection) return;
+
+    commentsSection.style.display = 
+        commentsSection.style.display === 'none' || commentsSection.style.display === ''
+            ? 'block'
+            : 'none';
+}
+
 function toggleComments(button) {
     const post = button.closest('.post');
     const commentsSection = post.querySelector('.comments-section');

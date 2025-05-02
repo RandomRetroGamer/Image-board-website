@@ -37,25 +37,60 @@
         
     </div>
 
-    <div class="post_input">
 
+	<div id = "layout_box_ ID" class = "layout_box">
+		<div id="header_box_ID" class = "header_box">
 
-        <form method="POST" enctype="multipart/form-data">
-            <div class="uploadContainer">
-                <h3>Submit a post!</h3>
-                <label for="title">Title</label>
-                <input type="text" name="title" placeholder="Title" class="title_input" required />
-
-                <label for="image">Image</label>
-                <input type="file" name="image" accept="image/*" required />
-                <label for="description">Comment</label>
-                <textarea  name="description" placeholder="//Type something" class="description_input"> </textarea>
-    
-                <button type="submit"> Post </button>
+            <div class="post_left posts">
+                <div class="description">
+                    <p>Buddies.com, an anonymous forum</p>
+                </div>
+            </div>
+            <div class="post_middle ">
+                <button id="form_Button" class="form_button" type="button" onclick="toggleThreadForm()"> >>Create thread<< </button>
+            </div>
+            <div class="post_right posts">
+                <div class="description">
+                    <p>Whatever</p>
+                </div>
             </div>
 
-        </form>
-    </div>
+
+
+
+
+       		 </div>	
+
+             <div class="create_thread_container" style="display: none;">
+                <div class="create_thread_header">
+                    <span class="create_thread_header_span">
+                        Thread
+                    </span>
+                </div>
+
+                <div class="post_input" >
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="uploadContainer">
+                            <h3>Submit a post!</h3>
+                            <label for="title">Title</label>
+                            <input type="text" name="title" placeholder="Title" class="title_input" required />
+            
+                            <label for="image">Image</label>
+                            <input type="file" name="image" accept="image/*" required />
+                            <label for="description">Comment</label>
+                            <textarea  name="description" placeholder="//Type something" class="description_input"> </textarea>
+                
+                            <button type="submit"> Post </button>
+                        </div>
+            
+                    </form>
+                </div>
+             </div>
+                
+            
+	</div>
+
 
     
     <!-- forum container, use the ids to style them in style.css -->

@@ -13,6 +13,58 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 
 
 }
+
+.layout_box{
+    background-color: rgba(3, 141, 94, 0.7);
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.header_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.posts{
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+    width: 33.33%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.post_left{
+    align-items: center;
+    justify-content: center;
+
+}
+
+.post_middle{
+    margin: auto;   
+}
+
+.create_thread_container{
+    position: relative;
+    height: auto;
+    width: 100%;
+    border-radius: 2vh;
+    background-color: rgba(3, 141, 94, 0.06);
+}
+
+.create_thread_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scaleX(1.2);
+}
+
 /*Form to submit posts*/
 
 .uploadContainer {
